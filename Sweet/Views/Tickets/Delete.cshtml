@@ -1,0 +1,25 @@
+﻿@model Sweet.Models.Ticket
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<p>
+    Are you sure you would like to delete this video?
+</p>
+<ul>
+    <li>Title: @Model.Title</li>
+    <li>Description: @Model.Description</li>
+</ul>
+
+@using (Html.BeginForm("DoDelete", "Tickets", FormMethod.Post))
+{
+
+    @Html.HiddenFor(m => m.TicketId)
+    <input type="submit" class="btn btn-danger" value="Yes, Delete it!" />
+    @Html.ActionLink("No, back to tickets", "Index")
+}
+

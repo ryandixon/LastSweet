@@ -1,0 +1,14 @@
+﻿@model Sweet.Models.Ticket
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New</h2>
+
+@using (Html.BeginForm("Add", "Tickets", FormMethod.Post, new { @class = "form" }))
+{
+    Html.RenderPartial("_TicketForm");
+}
+
