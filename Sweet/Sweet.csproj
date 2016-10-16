@@ -252,11 +252,12 @@
     <Content Include="Views\Tickets\Index.cshtml" />
     <Content Include="Views\Tickets\New.cshtml" />
     <Content Include="Views\Tickets\_TicketForm.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Role\" />
-    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
