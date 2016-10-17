@@ -59,7 +59,6 @@ namespace Sweet.Controllers
             ticketInDb.Title = ticket.Title;
             ticketInDb.Description = ticket.Description;
             ticketInDb.Resolve = ticket.Resolve;
-            //ticketInDb.Meeting = ticket.Meeting;
             _dbContext.SaveChanges();
 
             return RedirectToAction("Index");
