@@ -1,10 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using Sweet.Models;
-using System.Data.Entity;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using System.Web.Routing;
 
 namespace FinalSweet.Controllers
 {
@@ -51,7 +47,7 @@ namespace FinalSweet.Controllers
             if (meetingInDb == null)
                 return HttpNotFound();
 
-            meetingInDb.MeetingId = meeting.MeetingId;
+            //meetingInDb.MeetingId = meeting.MeetingId;
             meetingInDb.UserName = meeting.UserName;
             meetingInDb.Schedule = meeting.Schedule;
             meetingInDb.Time = meeting.Time;

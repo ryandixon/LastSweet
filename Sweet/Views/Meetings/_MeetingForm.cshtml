@@ -1,9 +1,5 @@
 ﻿@model Sweet.Models.Meeting
 
-<div class="form-group">
-    @Html.LabelFor(m => m.MeetingId)
-    @Html.TextBoxFor(m => m.MeetingId, new { @class = "form-control" })
-</div>
 
 <div class="form-group">
     @Html.LabelFor(m => m.UserName)
@@ -12,12 +8,12 @@
 
 <div class="form-group">
     @Html.LabelFor(m => m.Schedule)
-    @Html.TextAreaFor(m => m.Schedule, new { @class = "form-control", rows = 4 })
+    @Html.TextAreaFor(m => m.Schedule, new { @class = "form-control"})
 </div>
 
 <div class="form-group">
     @Html.LabelFor(m => m.Time)
-    @Html.TextAreaFor(m => m.Time, new { @class = "form-control", rows = 4 })
+    @Html.TextAreaFor(m => m.Time, new { @class = "form-control"})
 </div>
 
 @Html.HiddenFor(m => m.MeetingId)
