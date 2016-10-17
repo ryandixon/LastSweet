@@ -10,7 +10,7 @@ namespace Sweet.Models
     {
         public int MeetingId { get; set; }
         public string UserName { get; set; }
-        [Display(Name = "Schedule")]
+        [Display(Name = "Schedule Date")]
         [DataType(DataType.Date)]
         public DateTime Schedule { get; set; }
         public string Time { get; set; }

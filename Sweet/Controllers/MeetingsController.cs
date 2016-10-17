@@ -15,7 +15,7 @@ namespace FinalSweet.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
-        // GET: Appointments
+        // GET: Meeetings
 
         public ActionResult Index()
         {
@@ -36,12 +36,12 @@ namespace FinalSweet.Controllers
         }
         public ActionResult Edit(int id)
         {
-            var appointment = _dbContext.Meetings.SingleOrDefault(v => v.MeetingId == id);
+            var meeting = _dbContext.Meetings.SingleOrDefault(v => v.MeetingId == id);
 
-            if (appointment == null)
+            if (meeting == null)
                 return HttpNotFound();
 
-            return View(appointment);
+            return View(meeting);
         }
         [HttpPost]
         public ActionResult Update(Meeting meeting)
