@@ -12,9 +12,10 @@
 <table class="table">
     <thead>
         <tr>
-                @Html.DisplayNameFor(model => model.UserName)
-                @Html.DisplayNameFor(model => model.Schedule)
-                @Html.DisplayNameFor(model => model.Time)
+            @Html.DisplayNameFor(Model => Model.MeetingId)
+            @Html.DisplayNameFor(model => model.UserName)
+            @Html.DisplayNameFor(model => model.Schedule)
+            @Html.DisplayNameFor(model => model.Time)
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => meeting.MeetingId)
                     @Html.DisplayFor(modelItem => meeting.UserName)
                 
                     @Html.DisplayFor(modelItem => meeting.Schedule)

@@ -46,14 +46,15 @@ namespace FinalSweet.Controllers
         [HttpPost]
         public ActionResult Update(Meeting meeting)
         {
-            var appointmentInDb = _dbContext.Meetings.SingleOrDefault(v => v.MeetingId == meeting.MeetingId);
+            var meetingInDb = _dbContext.Meetings.SingleOrDefault(v => v.MeetingId == meeting.MeetingId);
 
-            if (appointmentInDb == null)
+            if (meetingInDb == null)
                 return HttpNotFound();
 
-            appointmentInDb.UserName = meeting.UserName;
-            appointmentInDb.Schedule = meeting.Schedule;
-            appointmentInDb.Time = meeting.Time;
+            meetingInDb.MeetingId = meeting.MeetingId;
+            meetingInDb.UserName = meeting.UserName;
+            meetingInDb.Schedule = meeting.Schedule;
+            meetingInDb.Time = meeting.Time;
             _dbContext.SaveChanges();
 
             return RedirectToAction("Index");
@@ -73,8 +74,10 @@ namespace FinalSweet.Controllers
             var appointment = _dbContext.Meetings.SingleOrDefault(v => v.MeetingId == id);
             if (appointment == null)
                 return HttpNotFound();
+
             _dbContext.Meetings.Remove(appointment);
             _dbContext.SaveChanges();
+
             return RedirectToAction("Index");
         }
     }
