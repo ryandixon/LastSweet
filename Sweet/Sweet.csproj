@@ -255,6 +255,10 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Tickets\EmployeeTicket.cshtml" />
     <Content Include="Views\Meetings\Index.cshtml" />
+    <Content Include="Views\Meetings\Delete.cshtml" />
+    <Content Include="Views\Meetings\Edit.cshtml" />
+    <Content Include="Views\Meetings\_MeetingForm.cshtml" />
+    <Content Include="Views\Meetings\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

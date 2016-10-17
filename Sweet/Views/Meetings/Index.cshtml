@@ -1,20 +1,49 @@
-﻿@model Sweet.Models.Meeting
+﻿
+@model IEnumerable<Sweet.Models.Meeting>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Tickets</h2>
+<h2>Appointments</h2>
 <p>
-    @Html.ActionLink("Add Appoitment", "New")
+    @Html.ActionLink("Add an Appointment", "New")
 </p>
-<ul>
-    @foreach (var meeting in Model)
-    {
-        <li>
-            @Html.ActionLink("Edit", "Edit", new { id = meeting.MeetingId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = meeting.MeetingId })
-        </li>
-    }
-</ul>
-
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Schedule)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    <div>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MeetingId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MeetingId })
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
