@@ -58,6 +58,7 @@ namespace Sweet.Controllers
 
             ticketInDb.Title = ticket.Title;
             ticketInDb.Description = ticket.Description;
+            ticketInDb.UserName = ticket.UserName;
             ticketInDb.Resolve = ticket.Resolve;
             _dbContext.SaveChanges();
 
