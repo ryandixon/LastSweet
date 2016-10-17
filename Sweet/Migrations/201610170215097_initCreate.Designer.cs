@@ -7,13 +7,13 @@ namespace Sweet.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddTicketsTable : IMigrationMetadata
+    public sealed partial class initCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTicketsTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610170006174_AddTicketsTable"; }
+            get { return "201610170215097_initCreate"; }
         }
         
         string IMigrationMetadata.Source

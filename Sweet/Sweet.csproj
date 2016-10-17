@@ -177,9 +177,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610170006174_AddTicketsTable.cs" />
-    <Compile Include="Migrations\201610170006174_AddTicketsTable.Designer.cs">
-      <DependentUpon>201610170006174_AddTicketsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201610170215097_initCreate.cs" />
+    <Compile Include="Migrations\201610170215097_initCreate.Designer.cs">
+      <DependentUpon>201610170215097_initCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -272,8 +272,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610170006174_AddTicketsTable.resx">
-      <DependentUpon>201610170006174_AddTicketsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610170215097_initCreate.resx">
+      <DependentUpon>201610170215097_initCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

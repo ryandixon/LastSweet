@@ -22,9 +22,7 @@ namespace FinalSweet.Controllers
             var user = User.Identity.GetUserName();
             if (user.Equals(""))
             {
-                return RedirectToAction("Index", new RouteValueDictionary(
-                    new { controller = "Home", action = "Home" })
-                );
+                return RedirectToAction("Index");
             }
             else
             {

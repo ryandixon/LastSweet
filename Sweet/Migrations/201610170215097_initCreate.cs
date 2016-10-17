@@ -3,10 +3,21 @@ namespace Sweet.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddTicketsTable : DbMigration
+    public partial class initCreate : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Meetings",
+                c => new
+                    {
+                        MeetingId = c.Int(nullable: false, identity: true),
+                        UserName = c.String(),
+                        Schedule = c.DateTime(nullable: false),
+                        Time = c.String(),
+                    })
+                .PrimaryKey(t => t.MeetingId);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -37,13 +48,10 @@ namespace Sweet.Migrations
                         TicketId = c.Int(nullable: false, identity: true),
                         Title = c.String(),
                         Description = c.String(),
-                        Resolve = c.Int(),
-                        Meeting = c.DateTime(),
+                        Resolve = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.TicketId)
-                .ForeignKey("dbo.AspNetUsers", t => t.TicketId, cascadeDelete: true);
-
-
+                .PrimaryKey(t => t.TicketId);
+            
             CreateTable(
                 "dbo.AspNetUsers",
                 c => new
@@ -109,6 +117,7 @@ namespace Sweet.Migrations
             DropTable("dbo.Tickets");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Meetings");
         }
     }
 }
