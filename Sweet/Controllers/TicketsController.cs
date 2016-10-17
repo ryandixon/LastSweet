@@ -2,6 +2,10 @@
 using System.Web.Mvc;
 using Sweet.Models;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using System.Web.Routing;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Sweet.Controllers
 {

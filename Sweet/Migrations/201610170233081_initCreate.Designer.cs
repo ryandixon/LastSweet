@@ -13,7 +13,7 @@ namespace Sweet.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201610170215097_initCreate"; }
+            get { return "201610170233081_initCreate"; }
         }
         
         string IMigrationMetadata.Source

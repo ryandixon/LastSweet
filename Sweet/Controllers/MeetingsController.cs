@@ -21,9 +21,7 @@ namespace FinalSweet.Controllers
         {
             var user = User.Identity.GetUserName();
             if (user.Equals(""))
-            {
                 return RedirectToAction("Index");
-            }
             else
             {
                 var meetings = from m in _dbContext.Meetings

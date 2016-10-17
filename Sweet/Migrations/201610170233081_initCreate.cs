@@ -49,6 +49,7 @@ namespace Sweet.Migrations
                         Title = c.String(),
                         Description = c.String(),
                         Resolve = c.Int(nullable: false),
+                        UserName = c.String(),
                     })
                 .PrimaryKey(t => t.TicketId);
             
