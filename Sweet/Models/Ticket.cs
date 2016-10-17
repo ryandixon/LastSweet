@@ -11,6 +11,7 @@ namespace Sweet.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public Resolve Resolve { get; set; }
+        //public DateTime Meeting { get; set; }
 
     }
     public enum Resolve

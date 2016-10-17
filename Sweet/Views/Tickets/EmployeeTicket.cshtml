@@ -1,0 +1,26 @@
+﻿@model Sweet.Models.Ticket
+@{
+    ViewBag.Title = "EmployeeTicket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EmployeeTicket</h2>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Description)
+    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 4 })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Resolve)
+    @Html.EnumDropDownListFor(m => m.Resolve, new { @class = "form-control" })
+</div>
+
+@Html.HiddenFor(m => m.TicketId)
+<input type="submit" class="btn btn-primary" value="Submit" />
+

@@ -9,8 +9,7 @@ namespace Sweet.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "Sweet.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Sweet.Models.ApplicationDbContext context)

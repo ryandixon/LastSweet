@@ -1,0 +1,20 @@
+﻿@model Sweet.Models.Meeting
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tickets</h2>
+<p>
+    @Html.ActionLink("Add Appoitment", "New")
+</p>
+<ul>
+    @foreach (var meeting in Model)
+    {
+        <li>
+            @Html.ActionLink("Edit", "Edit", new { id = meeting.MeetingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = meeting.MeetingId })
+        </li>
+    }
+</ul>
+

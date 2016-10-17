@@ -3,7 +3,7 @@ namespace Sweet.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class AddTicketsTable : DbMigration
     {
         public override void Up()
         {
@@ -37,10 +37,13 @@ namespace Sweet.Migrations
                         TicketId = c.Int(nullable: false, identity: true),
                         Title = c.String(),
                         Description = c.String(),
-                        Resolve = c.Int(nullable: false),
+                        Resolve = c.Int(),
+                        Meeting = c.DateTime(),
                     })
-                .PrimaryKey(t => t.TicketId);
-            
+                .PrimaryKey(t => t.TicketId)
+                .ForeignKey("dbo.AspNetUsers", t => t.TicketId, cascadeDelete: true);
+
+
             CreateTable(
                 "dbo.AspNetUsers",
                 c => new

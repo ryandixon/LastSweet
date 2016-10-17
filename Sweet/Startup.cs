@@ -52,10 +52,10 @@ namespace Sweet
             }
 
             // creating Creating Manager role    
-            if (!roleManager.RoleExists("Customer"))
+            if (!roleManager.RoleExists("Manager"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Customer";
+                role.Name = "Manager";
                 roleManager.Create(role);
 
             }

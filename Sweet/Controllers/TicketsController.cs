@@ -55,10 +55,12 @@ namespace Sweet.Controllers
             ticketInDb.Title = ticket.Title;
             ticketInDb.Description = ticket.Description;
             ticketInDb.Resolve = ticket.Resolve;
+            //ticketInDb.Meeting = ticket.Meeting;
             _dbContext.SaveChanges();
 
             return RedirectToAction("Index");
         }
+
 
         public ActionResult Delete(int id)
         {
@@ -74,10 +76,13 @@ namespace Sweet.Controllers
         public ActionResult DoDelete(int id)
         {
             var ticket = _dbContext.Tickets.SingleOrDefault(v => v.TicketId == id);
+
             if (ticket == null)
                 return HttpNotFound();
+
             _dbContext.Tickets.Remove(ticket);
             _dbContext.SaveChanges();
+
             return RedirectToAction("Index");
         }
     }
