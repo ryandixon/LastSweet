@@ -18,22 +18,20 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var meeting in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Schedule)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Time)
+                    @Html.DisplayFor(modelItem => meeting.UserName)
+                
+                    @Html.DisplayFor(modelItem => meeting.Schedule)
+               
+                    @Html.DisplayFor(modelItem => meeting.Time)
                 </td>
                 <td>
                     <div>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.MeetingId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.MeetingId })
+                        @Html.ActionLink("Edit", "Edit", new { id = meeting.MeetingId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = meeting.MeetingId })
                     </div>
                 </td>
             </tr>

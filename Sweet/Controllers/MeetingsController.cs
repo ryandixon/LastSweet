@@ -17,24 +17,11 @@ namespace FinalSweet.Controllers
         }
         // GET: Appointments
 
-        public async Task<ActionResult> Index(string str)
+        public ActionResult Index()
         {
-            var user = User.Identity.GetUserName();
-            if (user.Equals(""))
-                return RedirectToAction("Index");
-            else
-            {
-                var meetings = from m in _dbContext.Meetings
-                                   select m;
-                if (!string.IsNullOrEmpty(str))
-                {
-                    meetings = meetings.Where(s => s.UserName.Contains(str));
-                }
-                return View(await meetings.ToListAsync());
-            }
+            var meeting = _dbContext.Meetings.ToList();
 
-
-
+            return View(meeting);
         }
         public ActionResult New()
         {
